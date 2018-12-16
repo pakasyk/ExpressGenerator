@@ -27,7 +27,7 @@ router.post('/contacts-create', (req, res) => {
   let contacs = fs.readFileSync('./database/todo-db.json');
   let contactArray = JSON.parse(contacs);
   contactArray.push(req.body);
-  fs.writeFileSync('../database/todo-db.json', JSON.stringify(contactArray));
+  fs.writeFileSync('./database/todo-db.json', JSON.stringify(contactArray));
   res.redirect('/messages');
 })
 
